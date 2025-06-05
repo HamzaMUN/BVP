@@ -25,7 +25,7 @@ We computed the sin(x) derivative at x = 1 by looping over the required values o
 ### Task 3: Generate the tridiagonal matrix (M) and RHS vector (F) for solving the BVP u'' = f(x)
 #### Problem setup:
 $$u'' = f(x), \quad u(0) = A, \quad u(1) = B$$  
-Let't take a simple function $f(x) = 2x$ and boundary conditions as $A = 0$ and $B = 1$.  
+Let's take a simple function $f(x) = 2x$ and boundary conditions as $A = 0$ and $B = 1$.  
 For $N = 10$, the grid points are $x_j = \frac {j}{N + 1}$, where $j = 0, 1, 2,...,N$.  
 The grid spacing is: $h = \frac {b - a}{N + 1} = \frac {1}{N + 1} = \frac {1}{11} \approx 0.09090909$  
 The grid points will be: $x_0 = 0, x_1 = 0.09090909, x_2 = 0.18181818,...,x_10 = 1$  
@@ -115,10 +115,10 @@ $x^2 - 2y = 1$ (Equation 2)
 From equation 2 substitute $x^2 = 2y + 1$ in equation 1:  
 $$(2y + 1) + y^2 = 9$$  
 $$y^2 + 2y + 1 = 9 \implies y^2 + 2y - 8 = 0$$  
-We can solve above equation using the quadratic formula:  
+We can solve the above equation using the quadratic formula:  
 $$y = \frac{-2 \pm \sqrt{2^2 -4(1)(-8)}}{2(1)} = \frac{-2 \pm \sqrt{4 +32}}{2} = \frac{-2 \pm \sqrt{36}}{2} = \frac{-2 \pm 6}{2}$$  
-From above equation, we can calculate possible values of y as: $y = \frac {-2 + 6}{2} = 2$ or $y = \frac {-2 -6}{2} = -4$  
-We can substitute above values of y back to the expression $x^2 = 2y + 1$ to find values of x:  
+From the above equation, we can calculate possible values of y as: $y = \frac {-2 + 6}{2} = 2$ or $y = \frac {-2 -6}{2} = -4$  
+We can substitute the above values of y back into the expression $x^2 = 2y + 1$ to find values of x:  
 If y = 2:  
 $$x^2 = 2(2) + 1 = 5 \implies x = \pm \sqrt {5}$$  
 If y = -4:  
@@ -146,7 +146,7 @@ Since the derivative of $(1 + u^2)u'$ is zero, it means that $(1 + u^2)u'$ is co
 $$(1 + u^2)u' = C$$  
 Now, let's solve for $u'$:  
 $$u' = \frac {C}{1 + u^2}$$  
-Separating variables and integrating, gives:  
+Separating variables and integrating gives:  
 $$\int  (1 + u^2) du = \int C dx$$  
 $\int (1 + u^2) du = u + \frac {u^3}{3}$ and $\int C dx = Cx + D$, so the equation becomes:  
 $$u + \frac {u^3}{3} = Cx + D$$  
@@ -176,12 +176,12 @@ After solving, we will update the solution as:
 $$u^{(k+1)} = u^{(k)}+\delta^{(k)}$$
 
 ### Comments on Task 7 results:
-The chart in Figure 3 compares numerical and exact solutions for a nonlinear boundary value problem (BVP) as defined in the task introduction section. The numerical solutions were computed using Newton's method on a uniform grid, and its accuracy was assessed against the exact solution. From the plot in Figure 3, we can see that the approximated solution using Newton's method converges to the exact solution as the grid points are refined, i.e., the Exact and approximate solution should be the same if h becomes zero. This concept holds in the above solution.  
+The chart in Figure 3 compares numerical and exact solutions for a nonlinear boundary value problem (BVP) as defined in the task introduction section. The numerical solutions were computed using Newton's method on a uniform grid, and their accuracy was assessed against the exact solution. From the plot in Figure 3, we can see that the approximated solution using Newton's method converges to the exact solution as the grid points are refined, i.e., the Exact and approximate solutions should be the same if h becomes zero. This concept holds in the above solution.  
 
-To further assess its convergence, we took a list of different grids as $N = 10, 20, 40, 80, 160$, and we computed the exact solution and approximate solution on these grids. Then, we computed the error between the exact and approximate solution and plotted the norm of error in the log scale in Figure 4. The plot in Figure 4 shows that the error value keeps decreasing as we increase the number of interior grid points.
+To further assess its convergence, we took a list of different grids as $N = 10, 20, 40, 80, 160$, and we computed the exact solution and approximate solution on these grids. Then, we computed the error between the exact and approximate solutions and plotted the norm of the error on a log scale in Figure 4. The plot in Figure 4 shows that the error value keeps decreasing as we increase the number of interior grid points.
 
 ## Conclusion
-This study establishes the significance of finite difference and Newton’s methods in solving boundary value problems (BVPs) for linear and nonlinear equations. The numerical solutions fetched closely approximated the exact solutions, with central and extrapolated central difference schemes providing higher accuracy than forward and backward differences. The construction of the tridiagonal matrix and right-hand side vector played a crucial role in efficiently solving the discretized BVP.  
+This study establishes the significance of finite difference and Newton’s methods in solving boundary value problems (BVPs) for linear and nonlinear equations. The numerical solutions closely approximated the exact solutions, with central and extrapolated central difference schemes providing higher accuracy than forward and backward differences. The construction of the tridiagonal matrix and right-hand side vector played a crucial role in efficiently solving the discretized BVP.  
 
 Newton’s method proved a reliable iterative approach for nonlinear equations, converging efficiently under appropriate initial guesses. Further, the choice of grid type significantly influenced the solution accuracy; the exponential grid provides better resolution in regions with steep gradients, outperforming the uniform grid in capturing rapid changes in the solution.  
 
